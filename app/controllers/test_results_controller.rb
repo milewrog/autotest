@@ -1,5 +1,6 @@
 class TestResultsController < ApplicationController
-  before_action :set_test_result, only: [:show, :edit, :update, :destroy]
+  before_action :set_test_result, only: [:show, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   # GET /test_results
   # GET /test_results.json
@@ -10,15 +11,6 @@ class TestResultsController < ApplicationController
   # GET /test_results/1
   # GET /test_results/1.json
   def show
-  end
-
-  # GET /test_results/new
-  def new
-    @test_result = TestResult.new
-  end
-
-  # GET /test_results/1/edit
-  def edit
   end
 
   # POST /test_results
@@ -32,20 +24,6 @@ class TestResultsController < ApplicationController
         format.json { render :show, status: :created, location: @test_result }
       else
         format.html { render :new }
-        format.json { render json: @test_result.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /test_results/1
-  # PATCH/PUT /test_results/1.json
-  def update
-    respond_to do |format|
-      if @test_result.update(test_result_params)
-        format.html { redirect_to @test_result, notice: 'Test result was successfully updated.' }
-        format.json { render :show, status: :ok, location: @test_result }
-      else
-        format.html { render :edit }
         format.json { render json: @test_result.errors, status: :unprocessable_entity }
       end
     end

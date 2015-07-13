@@ -21,13 +21,8 @@
         <td><%= test_result.run_by_whom %></td>
         <td><%= test_result.test_details %></td>
         <td><%= link_to 'Show', test_result %></td>
-        <td><%= link_to 'Edit', edit_test_result_path(test_result) %></td>
         <td><%= link_to 'Destroy', test_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Test result', new_test_result_path %>

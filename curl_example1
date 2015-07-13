@@ -1,0 +1,1 @@
+curl -w"\n" 'http://localhost:3000/test_results.json' -H 'Content-Type: application/json'  -X POST -d '{"system_under_test":"ServiceAPI","passed":"1","run_by_whom":"michael","test_details":"json_goes_here"}'
