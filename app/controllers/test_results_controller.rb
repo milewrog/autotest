@@ -13,17 +13,14 @@ class TestResultsController < ApplicationController
   def show
   end
 
-  # POST /test_results
   # POST /test_results.json
   def create
     @test_result = TestResult.new(test_result_params)
 
     respond_to do |format|
       if @test_result.save
-        format.html { redirect_to @test_result, notice: 'Test result was successfully created.' }
         format.json { render :show, status: :created, location: @test_result }
       else
-        format.html { render :new }
         format.json { render json: @test_result.errors, status: :unprocessable_entity }
       end
     end
