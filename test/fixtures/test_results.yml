@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  system_under_test: MyString
+  passed: false
+  run_by_whom: MyString
+  test_details: MyText
+
+two:
+  system_under_test: MyString
+  passed: false
+  run_by_whom: MyString
+  test_details: MyText

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>System under test:</strong>
+  <%= @test_result.system_under_test %>
+</p>
+
+<p>
+  <strong>Passed:</strong>
+  <%= @test_result.passed %>
+</p>
+
+<p>
+  <strong>Run by whom:</strong>
+  <%= @test_result.run_by_whom %>
+</p>
+
+<p>
+  <strong>Test details:</strong>
+  <%= @test_result.test_details %>
+</p>
+
+<%= link_to 'Edit', edit_test_result_path(@test_result) %> |
+<%= link_to 'Back', test_results_path %>
