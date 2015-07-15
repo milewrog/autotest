@@ -1,0 +1,13 @@
+mysqldev:
+  image: docker_mysql
+  ports:
+    - "3306:3306"
+
+autotestdev:
+  build: autotestdev
+  links:
+    - mysqldev
+  ports:
+    - "3000:3000"
+  volumes:
+    - /Users/michael.lewandowski/Documents/work/autotest:/opt/autotest

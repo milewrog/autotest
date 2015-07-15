@@ -4,19 +4,19 @@ default: &default
   timeout: 5000
   username: root
   password:
-  host: localhost
+  host: mysqldev
 
 development:
   <<: *default
-  database: automation_testing_development
+  database: autotest_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: automation_testing_test
+  database: autotest_test
 
 production:
   <<: *default
-  database: automation_testing
+  database: autotest
