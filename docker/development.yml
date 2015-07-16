@@ -1,5 +1,5 @@
 mysqldev:
-  image: docker_mysql
+  image: docker_mysqlbase
   ports:
     - "3306:3306"
 

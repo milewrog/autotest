@@ -1,2 +1,5 @@
-mysql:
-  build: mysql
+mysqlbase:
+  build: mysqlbase
+
+autotestbase:
+  build: autotestbase

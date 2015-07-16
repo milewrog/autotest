@@ -1,1 +1,1 @@
-docker-compose -f development.yml stop
+docker-compose -f autotest.yml stop

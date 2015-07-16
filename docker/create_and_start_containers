@@ -1,1 +1,1 @@
-docker-compose -f development.yml up -d
+docker-compose -f autotest.yml up -d

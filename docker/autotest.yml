@@ -1,0 +1,11 @@
+mysql:
+  image: docker_mysqlbase
+  ports:
+    - "3306:3306"
+
+autotest:
+  build: autotest
+  links:
+    - mysql
+  ports:
+    - "3000:3000"

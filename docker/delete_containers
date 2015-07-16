@@ -1,1 +1,1 @@
-docker-compose -f development.yml rm
+docker-compose -f autotest.yml rm
