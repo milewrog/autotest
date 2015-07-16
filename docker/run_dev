@@ -1,0 +1,3 @@
+docker-compose -f autotestdev.yml run --rm autotestdev /bin/bash -l -c 'cd /opt/autotest ; bundle install --path=vendor_gems --clean'
+docker-compose -f autotestdev.yml up -d
+docker-compose -f autotestdev.yml run --rm autotestdev /bin/bash -l -c 'cd /opt/autotest ; RAILS_ENV=development bin/rake db:create db:migrate db:seed'

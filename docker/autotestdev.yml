@@ -1,0 +1,24 @@
+mysqldev:
+  build: mysql
+  expose:
+    - "3306"
+  ports:
+    - "4306:3306"
+  volumes:
+    - /var/lib/mysql
+  command: ["/usr/bin/mysqld_safe"]
+
+autotestdev:
+  build: autotest
+  environment:
+    RAILS_ENV: development
+    SECRET_KEY_BASE: 83a8c56ea3b0cf6fdf6bff7b84fb7bf2c0c2d5688d359e7d7df94984d26843f927e45ae79b73dadb46f82aa9dfe58974cc543ca80231eb0b7ae9fd70ed2be62e
+  links:
+    - mysqldev
+  expose:
+    - "4000"
+  ports:
+    - "4000:4000"
+  volumes:
+   - ..:/opt/autotest
+  command: ["bash", "-l", "-c", "cd /opt/autotest && bin/rails s -b 0.0.0.0 -p 4000"]

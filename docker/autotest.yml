@@ -19,4 +19,4 @@ autotest:
     - "3000"
   ports:
     - "3000:3000"
-  command: ["bash", "-l", "-c", "cd /opt/autotest ; bin/rails s -b 0.0.0.0 -p 3000"]
+  command: ["bash", "-l", "-c", "cd /opt/autotest && bin/rails s -b 0.0.0.0 -p 3000"]

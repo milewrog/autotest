@@ -31,5 +31,4 @@ RUN bash -l -c "gem install bundler"
 RUN git clone git://github.com/milewrog/autotest.git /opt/autotest
 
 # Install required gems.
-WORKDIR /opt/autotest
-RUN bash -l -c 'bundle install --path=/opts/vendor_gems'
+RUN bash -l -c 'cd /opt/autotest ; bundle install --path=vendor_gems'
