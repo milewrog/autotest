@@ -1,2 +1,0 @@
-docker-compose -f base_images.yml build
-docker-compose -f autotest.yml build

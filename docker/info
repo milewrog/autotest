@@ -3,3 +3,5 @@ docker images
 echo
 docker ps -a
 echo
+docker inspect -f '{{printf "%-25s:" .Name}} {{.Volumes}}' $(docker ps -a -q)
+echo

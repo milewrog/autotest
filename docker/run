@@ -1,0 +1,2 @@
+docker-compose -f autotest.yml up -d
+docker-compose -f autotest.yml run --rm autotest /bin/bash -l -c 'cd /opt/autotest ; RAILS_ENV=production bin/rake db:create db:migrate db:seed'

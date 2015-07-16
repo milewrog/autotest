@@ -1,11 +1,22 @@
 mysql:
-  image: docker_mysqlbase
+  build: mysql
+  expose:
+    - "3306"
   ports:
     - "3306:3306"
+  volumes:
+    - /var/lib/mysql
+  command: ["/usr/bin/mysqld_safe"]
 
 autotest:
   build: autotest
+  environment:
+    RAILS_ENV: production
+    SECRET_KEY_BASE: 0f1943f5cdd293b560d9aa2c72a62a071cd37749618907b4989b101c42f9b26b46596dc63bad7434387ec3b32f57e665591d5fbed48ea6fc201edefd28d28c2c
   links:
     - mysql
+  expose:
+    - "3000"
   ports:
     - "3000:3000"
+  command: ["bash", "-l", "-c", "cd /opt/autotest ; bin/rails s -b 0.0.0.0 -p 3000"]

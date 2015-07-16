@@ -1,5 +1,0 @@
-mysqlbase:
-  build: mysqlbase
-
-autotestbase:
-  build: autotestbase
